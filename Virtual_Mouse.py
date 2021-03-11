@@ -75,13 +75,13 @@ def find(img,image):
         y = pre[1]-cur[1]  #-cur[2]*cur[3] + pre[2]*pre[3]
         if cur[1]>430 and fl==2:
             fl=0
-            #mouse.release(Button.left)
+            mouse.release(Button.left)
         if abs(y)>10 and cur[1]<440 and fl!=2:
             y=0
         if cur[1] < 420 and fl!=2:
             pre = cur
             fl =2
-            #mouse.press(Button.left)
+            mouse.press(Button.left)
             flag += 1
             if flag==1:
                 count=1
@@ -89,22 +89,22 @@ def find(img,image):
             else:
                 print('Double Click')
                 
-        #elif cur[1] < 420 and fl!=2:
-            #fl =1
-            #print('Right Click')
-            #mouse.press(Button.right)
-            #mouse.release(Button.right)
+        elif cur[1] < 420 and fl!=2:
+            fl =1
+            print('Right Click')
+            mouse.press(Button.right)
+            mouse.release(Button.right)
             
         else:
             print(cur,x,y)
-            #mouse.move(3*x,5*y)
+            mouse.move(3*x,5*y)
             pre=[cur[0],cur[1],cur[2],cur[3]]
             
                 
     if count>=1:
         count+=1
         if count<=5 and flag==2:
-            #mouse.click(Button.left, 2)
+            mouse.click(Button.left, 2)
             count = 0
             flag = 0
         elif count >5:
